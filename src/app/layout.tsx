@@ -18,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className} suppressHydrationWarning={true}>
-        <Header />
-        {children}
+        <main className="py-4 px-6 container mx-auto">
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );
