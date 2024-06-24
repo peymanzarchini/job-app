@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <section className="py-12">
-      <h1 className="text-4xl text-center font-bold">
+      <h1 className="text-5xl text-center font-bold">
         Find your next
         <br />
         dream job
