@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className="container my-16">
+    <section className="container mt-16">
       <h1 className="text-5xl text-center font-bold">
         Find your next
         <br />
@@ -12,7 +12,7 @@ const Hero = () => {
           placeholder="Search phrase"
           className="border border-gray-400 w-full rounded-md py-2 px-3"
         />
-        <button className="bg-blue-600 text-white py-2 px-4 rounded-md">Search</button>
+        <button className="bg-blue-600 text-white rounded-md w-28 h-10">Search</button>
       </form>
     </section>
   );

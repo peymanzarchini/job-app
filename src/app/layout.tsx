@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Job-app",
@@ -18,10 +18,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className} suppressHydrationWarning={true}>
+      <body
+        className={`${inter.className} grid min-h-screen grid-rows-[auto_1fr_auto]`}
+        suppressHydrationWarning={true}
+      >
         <Header />
         {children}
-        <Footer />
+        <div className="border-t-2 border-gray-300">
+          <Footer />
+        </div>
       </body>
     </html>
   );

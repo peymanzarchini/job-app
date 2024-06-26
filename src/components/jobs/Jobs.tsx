@@ -2,7 +2,7 @@ import Job from "./Job";
 
 const Jobs = () => {
   return (
-    <section className="bg-slate-200 py-4 rounded-2xl">
+    <section className="bg-slate-200 py-4 rounded-2xl container my-12">
       <div className="container">
         <h1>Recent jobs</h1>
         <div className="flex flex-col gap-4">
