@@ -4,7 +4,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 const Header = () => {
   return (
     <header className="container flex items-center justify-between my-4">
-      {/* <div> */}
       <Link href={"/"} className="font-bold text-xl">
         Job Board
       </Link>
@@ -15,15 +14,13 @@ const Header = () => {
         <Link href={"/register"} className="bg-gray-200">
           Register
         </Link>
-        <Link href={"new-listing"} className="bg-blue-600 text-white">
+        <Link href={"new-listing"} className="bg-blue-500 text-white hover:bg-blue-600">
           Post a job
         </Link>
       </nav>
       <div className="h-10 bg-slate-300 rounded-full w-10 flex items-center justify-center sm:hidden">
         <GiHamburgerMenu size={25} />
       </div>
-
-      {/* </div> */}
     </header>
   );
 };
