@@ -119,7 +119,7 @@ const Register = () => {
         <Button type="submit" disabled={isSubmitting} className="w-full mt-5 rounded-xl">
           {isSubmitting ? (
             <div className="flex items-center justify-center">
-              <img src="./btnLoading.svg" alt="loding" className="w-10 h-10" />
+              <img src="./btnLoading.svg" alt="loding" className="w-6 h-6" />
             </div>
           ) : (
             "Register"
