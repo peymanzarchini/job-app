@@ -8,6 +8,7 @@ import TextField from "@/components/ui/TextField";
 import TitlePage from "@/components/ui/TitlePage";
 import Button from "@/components/ui/Button";
 import { TSignUpSchema, registerSchema } from "@/components/types/validation";
+import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 
 const Register = () => {
@@ -36,19 +37,19 @@ const Register = () => {
         },
         body: JSON.stringify(newData),
       });
-      await response.json();
+      const result = await response.json();
 
       if (response.status === 400) {
-        toast.error("User already exists");
+        toast.error(result.message);
       }
 
       if (response.status === 201) {
-        toast.success("Register Success");
+        toast.success(result.message);
+        reset();
       }
     } catch (err: any) {
       toast.error(err.message);
     }
-    reset();
   };
 
   return (
@@ -126,6 +127,7 @@ const Register = () => {
           )}
         </Button>
       </form>
+      <ToastContainer />
     </section>
   );
 };
