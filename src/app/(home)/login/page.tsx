@@ -12,7 +12,6 @@ import { TLoginSchema, loginSchema } from "@/components/types/validation";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
-import { cookies } from "next/headers";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
