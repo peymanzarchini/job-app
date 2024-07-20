@@ -6,14 +6,13 @@ import TextField from "@/components/ui/TextField";
 import TitlePage from "@/components/ui/TitlePage";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { FieldValues, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { TLoginSchema, loginSchema } from "@/components/types/validation";
 import Link from "next/link";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [showError, setShowError] = useState("");
   const {
     register,
     handleSubmit,
@@ -21,7 +20,7 @@ const Login = () => {
     reset,
   } = useForm<TLoginSchema>({ resolver: zodResolver(loginSchema) });
 
-  const handleSubmitLogin = async (data: FieldValues) => {
+  const handleSubmitLogin = async (data: TLoginSchema) => {
     console.log(data);
     reset();
   };

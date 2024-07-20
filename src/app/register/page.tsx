@@ -2,7 +2,7 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { FieldValues, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import TextField from "@/components/ui/TextField";
 import TitlePage from "@/components/ui/TitlePage";
@@ -22,7 +22,7 @@ const Register = () => {
     reset,
   } = useForm<TSignUpSchema>({ resolver: zodResolver(registerSchema) });
 
-  const handleSubmitRegister = async (data: FieldValues) => {
+  const handleSubmitRegister = async (data: TSignUpSchema) => {
     try {
       const newData = {
         firstName: data.firstName,
@@ -95,7 +95,7 @@ const Register = () => {
             className="absolute right-3 top-[45px] -translate-y-1/2 cursor-pointer bg-gray-100 !text-slate-600 hover:bg-transparent"
             onClick={() => setShowPassword((prev) => !prev)}
           >
-            {showPassword ? <FaRegEye size={18} /> : <FaRegEyeSlash size={18} />}
+            {showPassword ? <FaRegEyeSlash size={18} /> : <FaRegEye size={18} />}
           </Button>
         </div>
 
@@ -113,7 +113,7 @@ const Register = () => {
             className="absolute right-3 top-[45px] -translate-y-1/2 cursor-pointer bg-gray-100 !text-slate-600 hover:bg-transparent"
             onClick={() => setShowConfirmPassword((prev) => !prev)}
           >
-            {showConfirmPassword ? <FaRegEye size={18} /> : <FaRegEyeSlash size={18} />}
+            {showConfirmPassword ? <FaRegEyeSlash size={18} /> : <FaRegEye size={18} />}
           </Button>
         </div>
 
