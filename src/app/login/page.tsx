@@ -10,6 +10,9 @@ import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { TLoginSchema, loginSchema } from "@/components/types/validation";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import { cookies } from "next/headers";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -20,8 +23,38 @@ const Login = () => {
     reset,
   } = useForm<TLoginSchema>({ resolver: zodResolver(loginSchema) });
 
+  const router = useRouter();
+
   const handleSubmitLogin = async (data: TLoginSchema) => {
-    console.log(data);
+    try {
+      const newData = {
+        email: data.email,
+        password: data.password,
+      };
+
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newData),
+      });
+      const result = await response.json();
+
+      console.log(result);
+
+      if (response.status === 401) {
+        toast.error(result.message);
+        return;
+      }
+
+      if (response.status === 200) {
+        router.push("/dashboard");
+        reset();
+      }
+    } catch (err: any) {
+      toast.error(err.message);
+    }
     reset();
   };
 

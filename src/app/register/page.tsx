@@ -8,8 +8,7 @@ import TextField from "@/components/ui/TextField";
 import TitlePage from "@/components/ui/TitlePage";
 import Button from "@/components/ui/Button";
 import { TSignUpSchema, registerSchema } from "@/components/types/validation";
-import { ToastContainer } from "react-toastify";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -127,7 +126,6 @@ const Register = () => {
           )}
         </Button>
       </form>
-      <ToastContainer />
     </section>
   );
 };
