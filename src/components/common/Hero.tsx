@@ -1,5 +1,5 @@
-import Button from "./ui/Button";
-import TitlePage from "./ui/TitlePage";
+import Button from "../ui/Button";
+import TitlePage from "../ui/TitlePage";
 
 const Hero = () => {
   return (
