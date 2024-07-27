@@ -1,7 +1,7 @@
 import RegisterComponent from "@/components/auth/register/RegisterComponent";
 
 export const metadata = {
-  title: "Job-app | Register",
+  title: "Register",
 };
 
 const Register = () => {

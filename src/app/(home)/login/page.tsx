@@ -1,7 +1,7 @@
 import LoginComponent from "@/components/auth/login/LoginComponent";
 
 export const metadata = {
-  title: "Job-app | Login",
+  title: "Login",
 };
 
 const Login = () => {

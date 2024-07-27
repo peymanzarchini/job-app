@@ -83,7 +83,7 @@ const LoginComponent = () => {
             className="absolute right-3 top-[45px] -translate-y-1/2 cursor-pointer bg-gray-100 !text-slate-600 hover:bg-transparent"
             onClick={() => setShowPassword((prev) => !prev)}
           >
-            {showPassword ? <FaRegEye size={18} /> : <FaRegEyeSlash size={18} />}
+            {showPassword ? <FaRegEyeSlash size={18} /> : <FaRegEye size={18} />}
           </Button>
         </div>
         <Button type="submit" disabled={isSubmitting} className="w-full mt-5 rounded-xl">
