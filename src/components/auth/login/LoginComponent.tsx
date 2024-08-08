@@ -40,8 +40,6 @@ const LoginComponent = () => {
       });
       const result = await response.json();
 
-      console.log(result);
-
       if (response.status === 401) {
         toast.error(result.message);
         return;

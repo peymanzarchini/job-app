@@ -1,10 +1,10 @@
-import Button from "@/components/ui/Button";
+import LogoutComponent from "@/components/auth/logout/LogoutComponent";
 
 const Dashboard = () => {
   return (
     <div>
       Dashboard
-      <Button type="button">Logout</Button>
+      <LogoutComponent />
     </div>
   );
 };
