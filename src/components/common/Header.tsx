@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
+import ThemeComponent from "@/components/theme/ThemeComponent";
 
 const Header = () => {
   return (
@@ -8,11 +9,9 @@ const Header = () => {
         Job Board
       </Link>
       <nav className="hidden *:py-2 *:px-4 *:rounded-md sm:flex sm:gap-2">
+        <ThemeComponent />
         <Link href={"/login"} className="bg-gray-200">
           Login
-        </Link>
-        <Link href={"/register"} className="bg-gray-200">
-          Register
         </Link>
         <Link href={"new-listing"} className="bg-blue-500 text-white hover:bg-blue-600">
           Post a job

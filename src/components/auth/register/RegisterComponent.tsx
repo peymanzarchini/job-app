@@ -10,6 +10,7 @@ import Button from "@/components/ui/Button";
 import { TSignUpSchema, registerSchema } from "@/components/auth/types/validation";
 import toast from "react-hot-toast";
 import Image from "next/image";
+import Link from "next/link";
 
 const RegisterComponent = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -125,6 +126,9 @@ const RegisterComponent = () => {
             "Register"
           )}
         </Button>
+        <div className="text-center my-4 text-gray-500 border-t pt-4">
+          Already have an account? <Link href={"/login"}>Sign in</Link>
+        </div>
       </form>
     </section>
   );
