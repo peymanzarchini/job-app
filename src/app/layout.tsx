@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "next-themes";
 
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
   description: "Job App",
 };
 
-export default function DashLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -25,8 +27,14 @@ export default function DashLayout({
         className={`${inter.className} grid min-h-screen grid-rows-[auto_1fr_auto]`}
         suppressHydrationWarning={true}
       >
-        <ThemeProvider>{children}</ThemeProvider>
-        <Toaster />
+        <ThemeProvider>
+          <Header />
+          {children}
+          <div className="border-t-2 border-gray-300">
+            <Footer />
+          </div>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
