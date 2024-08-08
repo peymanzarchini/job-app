@@ -80,7 +80,6 @@ const RegisterComponent = () => {
           register={register("email")}
           errors={errors}
         />
-
         <div className="relative">
           <TextField
             label="Password"
